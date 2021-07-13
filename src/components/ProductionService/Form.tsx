@@ -27,37 +27,50 @@ export default function Form() {
   });
   const onSubmit = (data: any) => console.log(data);
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <InputFile {...register("files")} buttonIcon={<PhotoCamera />} className={classes.input} text={"Click to Upload Your files"} />
-      <Controller
+    // <form onSubmit={handleSubmit(onSubmit)}>
+    <div>
+      <InputFile
+        // {...register("files")}
+        buttonIcon={<PhotoCamera />}
+        className={classes.input}
+        text={"Click to Upload Your files"}
+      />
+      {/* <Controller
         name='itemName'
         control={control}
         defaultValue={""}
-        render={({ field }) => (
-          <TextInput {...field} style={{ maxWidth: 310 }} className={classes.input} placeholder='Enter item' label='Item name' variant='outlined' />
-        )}
+        render={({ field }) => ( */}
+      <TextInput
+        //  {...field}
+        style={{ maxWidth: 310 }}
+        className={classes.input}
+        placeholder='Enter item'
+        label='Item name'
+        variant='outlined'
       />
+      {/* )} */}
+
       {/*TODO: country */}
-      <Controller
+      {/* <Controller
         name='price'
         control={control}
         defaultValue={""}
-        render={({ field, fieldState }) => (
-          <TextInput
-            {...field}
-            style={{ maxWidth: 310 }}
-            className={classes.input}
-            placeholder='KWD 20.500'
-            label='Price ( Per piece )'
-            variant='outlined'
-            helperText={fieldState.error && "error"}
-          />
-        )}
+        render={({ field, fieldState }) => ( */}
+      <TextInput
+        // {...field}
+        style={{ maxWidth: 310 }}
+        className={classes.input}
+        placeholder='KWD 20.500'
+        label='Price ( Per piece )'
+        variant='outlined'
       />
+      {/* )} */}
+
       <div className={classes.buttons}>
         <MuiButton type='submit' variant='contained' color='primary' title={"Submit"} style={{ marginInlineEnd: 24 }} />
         <MuiButton title={"Cancel"} variant='contained' color='secondary' />
       </div>
-    </form>
+    </div>
+    // </form>
   );
 }
